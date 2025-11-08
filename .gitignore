@@ -1,0 +1,9 @@
+# Dependencias instaladas localmente
+node_modules/
+
+# Saidas de build e pre-visualizacao
+dist/
+
+# Arquivos temporarios do sistema
+.DS_Store
+.vite/

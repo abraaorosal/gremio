@@ -428,6 +428,9 @@
             <button type="button" class="scenario-btn" data-scenario="B" aria-pressed="false">
                 Cenário B — 8 Batalhões
             </button>
+            <button type="button" class="scenario-btn" data-scenario="C" aria-pressed="false">
+                Cenário C — 8 Unidades Mistas
+            </button>
         </div>
     </header>
 
@@ -493,6 +496,9 @@
                 key: 'A',
                 title: 'Cenário A — 7 Batalhões',
                 summary: 'Sedes: Fortaleza, Caucaia, Russas, Sobral, Juazeiro do Norte, Iguatu, Itapipoca.',
+                unitTypes: {
+                    default: 'Batalhão'
+                },
                 assignments: {
                     1: ['Fortaleza'],
                     2: [
@@ -513,7 +519,8 @@
                     5: [
                         'Juazeiro Do Norte', 'Brejo Santo', 'Crato', 'Barbalha', 'Jardim',
                         'Missão Velha', 'Mauriti', 'Várzea Alegre', 'Lavras Da Mangabeira',
-                        'Campos Sales', 'Cariús', 'Cedro', 'Aurora', 'Milagres', 'Icó'
+                        'Campos Sales', 'Cedro', 'Milagres', 'Icó', 
+                        'Aurora'
                     ],
                     6: [
                         'Iguatu', 'Mombaça', 'Acopiara', 'Tauá', 'Crateús', 'Parambu',
@@ -539,6 +546,9 @@
                 key: 'B',
                 title: 'Cenário B — 8 Batalhões',
                 summary: 'Sedes: Fortaleza, Caucaia, Quixadá, Russas, Sobral, Itapipoca, Iguatu, Juazeiro do Norte.',
+                unitTypes: {
+                    default: 'Batalhão'
+                },
                 assignments: {
                     1: ['Fortaleza'],
                     2: [
@@ -571,7 +581,63 @@
                     8: [
                         'Juazeiro Do Norte', 'Brejo Santo', 'Crato', 'Barbalha', 'Jardim',
                         'Missão Velha', 'Mauriti', 'Várzea Alegre', 'Lavras Da Mangabeira',
-                        'Campos Sales', 'Cariús', 'Cedro', 'Aurora', 'Milagres'
+                        'Campos Sales', 'Cedro', 'Aurora', 'Milagres'
+                    ]
+                },
+                hqs: {
+                    1: { name: 'Fortaleza', coords: [-3.7304512, -38.5217989] },
+                    2: { name: 'Caucaia', coords: [-3.7361, -38.6539] },
+                    3: { name: 'Quixadá', coords: [-4.9736, -39.0153] },
+                    4: { name: 'Russas', coords: [-4.9378, -37.9798] },
+                    5: { name: 'Sobral', coords: [-3.6894, -40.3482] },
+                    6: { name: 'Itapipoca', coords: [-3.4946, -39.5826] },
+                    7: { name: 'Iguatu', coords: [-6.3611, -39.3004] },
+                    8: { name: 'Juazeiro do Norte', coords: [-7.2131, -39.3154] }
+                }
+            },
+            C: {
+                key: 'C',
+                title: 'Cenário C — 8 Unidades Mistas',
+                summary: 'Sedes: Fortaleza, Caucaia, Quixadá (Companhia Independente), Russas, Sobral, Itapipoca (Companhia Independente), Iguatu (Companhia Independente), Juazeiro do Norte.',
+                unitTypes: {
+                    default: 'Batalhão',
+                    3: 'Companhia Independente',
+                    6: 'Companhia Independente',
+                    7: 'Companhia Independente'
+                },
+                assignments: {
+                    1: ['Fortaleza'],
+                    2: [
+                        'Caucaia', 'Maracanaú', 'Eusébio', 'Horizonte', 'São Gonçalo Do Amarante',
+                        'Maranguape', 'Aquiraz', 'Pacajus', 'Pacatuba', 'Cascavel', 'Itaitinga',
+                        'Guaiúba', 'Chorozinho', 'Redenção', 'Aracoiaba'
+                    ],
+                    3: [
+                        'Quixadá', 'Quixeramobim', 'Boa Viagem', 'Pedra Branca', 'Senador Pompeu',
+                        'Ocara', 'Baturité'
+                    ],
+                    4: [
+                        'Russas', 'Limoeiro Do Norte', 'Morada Nova', 'Jaguaruana', 'Jaguaribe',
+                        'Aracati', 'Beberibe', 'Icapuí', 'Tabuleiro Do Norte'
+                    ],
+                    5: [
+                        'Sobral', 'Tianguá', 'Massapê', 'Viçosa Do Ceará', 'Santa Quitéria',
+                        'Santana Do Acaraú', 'São Benedito', 'Forquilha', 'Guaraciaba Do Norte',
+                        'Ipu', 'Ubajara', 'Ibiapina', 'Ipueiras'
+                    ],
+                    6: [
+                        'Itapipoca', 'Trairi', 'Amontada', 'Itapajé', 'Pentecoste', 'Paracuru',
+                        'Paraipaba', 'Acaraú', 'Cruz', 'Itarema', 'Marco', 'Bela Cruz',
+                        'Camocim', 'Granja', 'Canindé'
+                    ],
+                    7: [
+                        'Iguatu', 'Icó', 'Mombaça', 'Acopiara', 'Tauá', 'Crateús',
+                        'Parambu', 'Tamboril', 'Novo Oriente', 'Independência', 'Nova Russas'
+                    ],
+                    8: [
+                        'Juazeiro Do Norte', 'Brejo Santo', 'Crato', 'Barbalha', 'Jardim',
+                        'Missão Velha', 'Mauriti', 'Várzea Alegre', 'Lavras Da Mangabeira',
+                        'Campos Sales', 'Cedro', 'Aurora', 'Milagres'
                     ]
                 },
                 hqs: {
@@ -590,6 +656,19 @@
         const legendItems = new Map();
         const headquarterMarkers = new Map();
         const DEFAULT_VIEW = { center: [-4.977, -39.59], zoom: 7 };
+
+        const getUnitType = (scenario, battalion) => {
+            if (!scenario) return 'Batalhão';
+            const types = scenario.unitTypes || {};
+            return types[battalion] || types.default || 'Batalhão';
+        };
+
+        const formatUnitLabel = (scenario, battalion, { html = false } = {}) => {
+            const unitType = getUnitType(scenario, battalion);
+            return html
+                ? `${battalion}&ordm; ${unitType}`
+                : `${battalion}º ${unitType}`;
+        };
 
         const normalize = (name) => name
             .normalize('NFD')
@@ -669,7 +748,8 @@
 
             if (detailsTitle) {
                 const count = municipalities.length;
-                detailsTitle.textContent = `${battalion}º BPRAIO — ${count} município${count > 1 ? 's' : ''}`;
+                const unitLabel = formatUnitLabel(currentScenario, battalion);
+                detailsTitle.textContent = `${unitLabel} RAIO — ${count} município${count > 1 ? 's' : ''}`;
             }
             if (detailsHQ) {
                 detailsHQ.textContent = headquarters
@@ -781,7 +861,9 @@
             const name = feature.properties.name;
             const normalizedName = normalize(name);
             const battalion = assignmentLookup.get(normalizedName);
-            const battalionLabel = battalion ? `${battalion}&ordm; Batalhão` : 'Ainda sem cobertura definida';
+            const battalionLabel = battalion
+                ? formatUnitLabel(currentScenario, battalion, { html: true })
+                : 'Ainda sem cobertura definida';
 
             layer.bindPopup(`
                 <strong>${name}</strong><br>
@@ -819,7 +901,7 @@
 
                 const content = document.createElement('div');
                 content.className = 'legend-content';
-                content.innerHTML = `<strong>${bat}&ordm; Batalhão</strong><span>Sede: ${info.name}</span>`;
+                content.innerHTML = `<strong>${formatUnitLabel(scenario, battalionNumber, { html: true })}</strong><span>Sede: ${info.name}</span>`;
 
                 item.appendChild(swatch);
                 item.appendChild(content);
@@ -873,7 +955,7 @@
                     weight: 2,
                     fillColor: BATTALION_COLORS[bat],
                     fillOpacity: 1
-                }).bindTooltip(`${bat}&ordm; Batalhão – ${info.name}`, {
+                }).bindTooltip(`${formatUnitLabel(scenario, battalionNumber, { html: true })} – ${info.name}`, {
                     permanent: true,
                     direction: 'top',
                     offset: [0, -12],
@@ -938,12 +1020,14 @@
                 if (!props) {
                     const scenario = SCENARIOS[selectedScenario];
                     const label = selectedBattalion
-                        ? `${selectedBattalion}&ordm; Batalhão filtrado`
+                        ? `${formatUnitLabel(scenario, selectedBattalion)} filtrado`
                         : 'Passe o mouse sobre um município';
                     this._div.innerHTML = `<h3>${scenario.title}</h3><span>${label}</span>`;
                     return;
                 }
-                const battalion = props.battalion ? `${props.battalion}&ordm; Batalhão` : 'Não definido na proposta';
+                const battalion = props.battalion
+                    ? formatUnitLabel(SCENARIOS[selectedScenario], props.battalion, { html: true })
+                    : 'Não definido na proposta';
                 this._div.innerHTML = `<h3>${props.name}</h3><span>${battalion}</span>`;
             };
             infoControl.addTo(map);
